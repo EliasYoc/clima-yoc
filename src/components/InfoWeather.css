@@ -1,0 +1,6 @@
+.weather {
+  margin-top: 10px;
+  background-color: rgba(255, 255, 255, 0.308);
+  border-radius: 10px;
+  backdrop-filter: blur(3px);
+}
