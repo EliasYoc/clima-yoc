@@ -32,7 +32,12 @@ const CurrentWeatherProvider = ({ children }) => {
       }
     };
   }, []);
-  const data = { searchForm, setSearchForm, errorMsg, currentWeather };
+  const data = {
+    searchForm,
+    setSearchForm,
+    errorMsg,
+    currentWeather,
+  };
 
   return (
     <CurrentWeatherContext.Provider value={data}>
