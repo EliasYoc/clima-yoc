@@ -3,6 +3,9 @@
   margin-top: 30px;
   position: relative;
 }
+.wrapper.behind {
+  transform: scale(0.7) translateX(-30%);
+}
 .poste {
   width: 100%;
   height: 50px;
@@ -57,5 +60,6 @@
   bottom: -405%;
   transform: rotate(120deg);
 }
-.circle:hover {
+.second .poste {
+  background-color: forestgreen;
 }

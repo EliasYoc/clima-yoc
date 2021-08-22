@@ -22,6 +22,7 @@ const WeatherCardDescr = ({ kmPerHrc, main }) => {
         </p>
         <section className="miniwrapper">
           <EolicEnergi />
+          <EolicEnergi className="behind" />
           <div className="descr-wind">
             <p>{kmPerHrc} km/h</p>
           </div>
