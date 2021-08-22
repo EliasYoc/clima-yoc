@@ -1,0 +1,13 @@
+.weather__temp {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-right: 15px;
+}
+.weather__temp > p {
+  font-size: 12px;
+}
+.weather__temp > img {
+  width: 100%;
+}

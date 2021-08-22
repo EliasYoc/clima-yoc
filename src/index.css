@@ -8,8 +8,8 @@ body {
 
   background: linear-gradient(
     50deg,
-    hsla(152, 100%, 50%, 1) 10%,
-    hsla(186, 100%, 69%, 1) 90%
+    hsla(152, 100%, 50%, 0.8) 10%,
+    hsla(186, 100%, 69%, 0.8) 90%
   );
   min-height: 100vh;
   margin: 0;

@@ -1,0 +1,27 @@
+.weather__description {
+  flex-grow: 1;
+  font-size: 12px;
+  flex-direction: column;
+}
+.weather__description .title-weather {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+.weather__description .title-weather * {
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+}
+.icon-desc {
+  font-size: 1.25rem;
+  margin-right: 5px;
+}
+.miniwrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.descr-wind {
+  display: flex;
+  align-items: center;
+}

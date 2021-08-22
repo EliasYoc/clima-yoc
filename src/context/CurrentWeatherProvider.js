@@ -11,7 +11,6 @@ const CurrentWeatherProvider = ({ children }) => {
   const [errorMsg, setErrorMsg] = useState(null);
   useEffect(() => {
     if ("geolocation" in navigator) {
-      // console.log(navigator);
       navigator.geolocation.getCurrentPosition((position) => {
         const { latitude, longitude } = position.coords;
         console.log(latitude, longitude);
@@ -26,6 +25,7 @@ const CurrentWeatherProvider = ({ children }) => {
         const data = await res.json();
         if (!res.ok) throw data;
         setCurrentWeather(data);
+        console.log("data ", data);
       } catch (err) {
         let msg = `Error ${err.cod}: ${err.message}`;
         setErrorMsg(msg);
