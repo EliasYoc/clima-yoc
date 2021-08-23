@@ -1,0 +1,60 @@
+.current-info.hourly {
+  background: none;
+  font-size: 11px;
+  position: relative;
+  overflow: hidden;
+}
+.cards-list {
+  border-radius: 10px;
+  display: flex;
+  overflow: auto;
+  margin: 10px;
+  padding-top: 5px;
+  position: relative;
+  z-index: 10;
+}
+.cards-list::-webkit-scrollbar {
+  height: 5px;
+}
+.cards-list::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.781);
+  border-radius: 30px;
+  margin-left: 5px;
+}
+.wave-animation {
+  bottom: 0;
+  position: absolute;
+  animation: wave 21s 2s linear infinite;
+  bottom: -20%;
+  z-index: 0;
+}
+.wave-animation.one {
+  width: 1000px;
+  animation: wave 24s linear infinite;
+  bottom: -17%;
+}
+.wave-animation.two {
+  width: 600px;
+  filter: blur(1px);
+}
+.wave-animation.tree {
+  width: 1000px;
+  animation: wave 22s linear infinite reverse;
+  filter: blur(3px);
+}
+@keyframes wave {
+  0% {
+    transform: translateX(-105%);
+  }
+  100% {
+    transform: translateX(110%);
+  }
+}
+/* @keyframes wave-two {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+} */
