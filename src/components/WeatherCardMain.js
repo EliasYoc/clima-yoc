@@ -6,7 +6,7 @@ const WeatherCardMain = ({ main, temp }) => {
         src={`http://openweathermap.org/img/wn/${temp.icon}@2x.png`}
         alt=""
       />
-      <h2 className="temp">{Math.round(main?.temp)}°</h2>
+      <h2 className="temp">{Math.round(main?.temp)}°C</h2>
       <p>
         {Math.round(main?.temp_min)}°/{Math.round(main?.temp_max)}°
       </p>

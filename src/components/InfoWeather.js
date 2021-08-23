@@ -11,10 +11,7 @@ const InfoWeather = () => {
   const kmPerHour = (wind?.speed * 3.6).toFixed(2);
   const dateSpanish = new Date(dt * 1000).toLocaleString("es-MX", {
     timeStyle: "short",
-    dateStyle: "medium",
   });
-  console.log(dateSpanish);
-  console.log(dt, main, name, weather);
   return (
     <div className="container">
       <div>

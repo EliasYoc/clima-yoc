@@ -1,4 +1,5 @@
 import "./App.css";
+import HourlyForecast from "./components/HourlyForecast";
 import WeatherCurrent from "./components/WeatherCurrent";
 import CurrentWeatherProvider from "./context/CurrentWeatherProvider";
 
@@ -7,6 +8,7 @@ function App() {
     <div className="App">
       <CurrentWeatherProvider>
         <WeatherCurrent />
+        <HourlyForecast />
       </CurrentWeatherProvider>
     </div>
   );

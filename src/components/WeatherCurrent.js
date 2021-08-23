@@ -3,10 +3,10 @@ import "./WeatherCurrent.css";
 import InfoWeather from "./InfoWeather";
 const WeatherCurrent = () => {
   return (
-    <article className="current-info">
+    <section className="current-info">
       <WeatherFormSearch />
       <InfoWeather />
-    </article>
+    </section>
   );
 };
 
