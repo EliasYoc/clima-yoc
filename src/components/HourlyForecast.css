@@ -24,13 +24,13 @@
 .wave-animation {
   bottom: 0;
   position: absolute;
-  animation: wave 21s 2s linear infinite;
+  animation: wave 21s linear infinite;
   bottom: -20%;
   z-index: 0;
 }
 .wave-animation.one {
   width: 1000px;
-  animation: wave 24s linear infinite;
+  animation: wave 26s linear infinite;
   bottom: -17%;
 }
 .wave-animation.two {
@@ -39,7 +39,7 @@
 }
 .wave-animation.tree {
   width: 1000px;
-  animation: wave 22s linear infinite reverse;
+  animation: wave 23s linear infinite reverse;
   filter: blur(3px);
 }
 @keyframes wave {
