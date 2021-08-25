@@ -5,6 +5,7 @@ const getWeatherOfMyLocation = async ({
   setWeather,
   setErrorMsg,
   exclude = "",
+  setIsLoading,
 }) => {
   try {
     const res = await fetch(
@@ -13,11 +14,13 @@ const getWeatherOfMyLocation = async ({
       }&appid=${"d1d8cbf725f40ad7d35f0ba266119c6a"}&units=metric&lang=sp`
     );
     const data = await res.json();
+    setIsLoading(false);
     if (!res.ok) throw data;
     setWeather(data);
-    console.log(path, data);
-    console.log(exclude);
+    // console.log(path, data);
+    // console.log(exclude);
   } catch (err) {
+    setIsLoading(false);
     let msg = `Error ${err.cod}: ${err.message}`;
     setErrorMsg(msg);
   }

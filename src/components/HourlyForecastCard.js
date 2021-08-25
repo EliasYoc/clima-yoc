@@ -5,17 +5,19 @@ const HourlyForecastCard = ({ dt, temp, weather }) => {
   });
   const tempRound = Math.round(temp);
   return (
-    <div className="hourly-card">
-      {hourSp}
-      <div className="hourly-card__temp">
-        <img
-          loading="lazy"
-          src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`}
-          alt=""
-        />
-        <p>{tempRound}°</p>
+    <>
+      <div className="hourly-card">
+        {hourSp}
+        <div className="hourly-card__temp">
+          <img
+            loading="lazy"
+            src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`}
+            alt=""
+          />
+          <p>{tempRound}°</p>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

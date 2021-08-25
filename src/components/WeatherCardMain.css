@@ -5,9 +5,37 @@
   flex-shrink: 0;
   margin-right: 15px;
 }
+
 .weather__temp > p {
   font-size: 12px;
 }
 .weather__temp > img {
+  width: 100px;
+  height: 100px;
+}
+.skeleton {
+  border-radius: 10px;
+  animation: skeleton 0.8s linear infinite alternate;
+  height: 10px;
+  margin-bottom: 5px;
+}
+@keyframes skeleton {
+  0% {
+    background-color: rgb(155, 155, 155);
+  }
+  100% {
+    background-color: white;
+  }
+}
+
+span.skeleton {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+}
+div.skeleton {
+  width: 50%;
+}
+p.skeleton {
   width: 100%;
 }
