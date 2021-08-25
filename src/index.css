@@ -7,13 +7,13 @@ body {
   background: #4e54c8; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
-    #8f94fb,
-    #4e54c8
+    #131757,
+    #2d317c
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to right,
-    #8f94fb,
-    #4e54c8
+    #181b50,
+    #121547
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   min-height: 100vh;
