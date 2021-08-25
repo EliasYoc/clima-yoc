@@ -5,7 +5,9 @@ import WeatherCardMain from "./WeatherCardMain";
 import WeatherCardDescr from "./WeatherCardDescr";
 import WeatherCardFooter from "./WeatherCardFooter";
 const InfoWeather = () => {
-  const { currentWeather } = useContext(CurrentWeatherContext);
+  const { currentWeather, isLoadingCurrentWeather } = useContext(
+    CurrentWeatherContext
+  );
   const { dt, main, name, weather, wind } = currentWeather;
   const temp = weather && weather[0];
   const kmPerHour = (wind?.speed * 3.6).toFixed(2);
@@ -15,17 +17,23 @@ const InfoWeather = () => {
   return (
     <div className="container">
       <div>
-        {main ? (
-          <>
-            <div className="container__weather">
-              <WeatherCardMain main={main} temp={temp} />
-              <WeatherCardDescr main={main} kmPerHrc={kmPerHour} />
-            </div>
-            <WeatherCardFooter name={name} dateSpanish={dateSpanish} />
-          </>
-        ) : (
-          <p>Cargando...</p>
-        )}
+        <div className="container__weather">
+          <WeatherCardMain
+            main={main}
+            temp={temp}
+            isLoading={isLoadingCurrentWeather}
+          />
+          <WeatherCardDescr
+            main={main}
+            kmPerHrc={kmPerHour}
+            isLoading={isLoadingCurrentWeather}
+          />
+        </div>
+        <WeatherCardFooter
+          name={name}
+          dateSpanish={dateSpanish}
+          isLoading={isLoadingCurrentWeather}
+        />
       </div>
     </div>
   );

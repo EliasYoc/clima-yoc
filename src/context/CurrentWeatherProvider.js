@@ -11,6 +11,8 @@ const CurrentWeatherProvider = ({ children }) => {
   const [currentWeather, setCurrentWeather] = useState({});
   const [oneCall, setOneCall] = useState({});
   const [errorMsg, setErrorMsg] = useState(null);
+  const [isLoadingCurrentWeather, setIsLoadingCurrentWeather] = useState(true);
+  const [isLoadingForecast, setIsLoadingForecast] = useState(true);
   useEffect(() => {
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {
@@ -21,6 +23,7 @@ const CurrentWeatherProvider = ({ children }) => {
           long: longitude,
           setWeather: setCurrentWeather,
           setErrorMsg,
+          setIsLoading: setIsLoadingCurrentWeather,
         };
         getWeatherOfMyLocation(optionsCurrentWeather);
         const optionesOneCall = {
@@ -28,6 +31,7 @@ const CurrentWeatherProvider = ({ children }) => {
           path: "onecall",
           setWeather: setOneCall,
           exclude: "minutely",
+          setIsLoading: setIsLoadingForecast,
         };
         getWeatherOfMyLocation(optionesOneCall);
       });
@@ -39,6 +43,8 @@ const CurrentWeatherProvider = ({ children }) => {
     errorMsg,
     currentWeather,
     oneCall,
+    isLoadingCurrentWeather,
+    isLoadingForecast,
   };
 
   return (

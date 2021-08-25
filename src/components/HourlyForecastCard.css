@@ -8,12 +8,14 @@
   background-color: rgba(184, 184, 184, 0.493);
   backdrop-filter: blur(7px);
 }
+.hourly-card.skeleton {
+  width: 50px;
+  height: 80px;
+}
 .hourly-card:last-child {
   margin-right: 0;
 }
-/* .hourly-card * {
-  border: 1px red solid;
-} */
+
 .hourly-card__temp {
   width: 50px;
   display: flex;
@@ -21,5 +23,10 @@
   align-items: center;
 }
 .hourly-card__temp > img {
-  width: 100%;
+  width: 50px;
+  height: 50px;
+}
+span.skeleton {
+  width: 50px;
+  height: 50px;
 }
