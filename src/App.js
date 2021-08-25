@@ -8,9 +8,11 @@ function App() {
   return (
     <div className="App">
       <CurrentWeatherProvider>
-        <WeatherCurrent />
-        <HourlyForecast />
-        <DailyForecast />
+        <div className="container-center">
+          <WeatherCurrent />
+          <HourlyForecast />
+          <DailyForecast />
+        </div>
       </CurrentWeatherProvider>
     </div>
   );
