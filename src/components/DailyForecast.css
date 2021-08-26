@@ -1,5 +1,5 @@
 .current-info.daily {
-  background: gray;
+  background: rgba(151, 151, 151, 0.761);
   animation: animation 0.8s ease;
   overflow: hidden;
 }
