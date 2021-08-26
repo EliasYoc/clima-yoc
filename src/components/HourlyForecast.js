@@ -8,7 +8,6 @@ const HourlyForecast = () => {
     isLoadingForecast,
   } = useContext(CurrentWeatherContext);
   const cardsLoading = Array(6).fill("");
-  console.log(cardsLoading);
   return (
     <>
       {isLoadingForecast ? (
