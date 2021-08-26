@@ -9,8 +9,8 @@ const DaylistForecastCard = ({ dailyForecast }) => {
   for (const key in dailyForecast.temp) {
     tempRounded[key] = Math.round(dailyForecast.temp[key]);
   }
-  console.log(dailyForecast.temp);
-  console.log(tempRounded);
+  // console.log(dailyForecast.temp);
+  // console.log(tempRounded);
   const { day, min, max } = tempRounded;
   const { icon, description } = weather[0];
   return (
