@@ -1,18 +1,20 @@
 import { createContext, useEffect, useState } from "react";
 import getWeatherOfMyLocation from "../features/getWeatherOfMyLocation";
 
-const initialForm = {
+export const initialSearchForm = {
   city: "",
 };
 export const CurrentWeatherContext = createContext();
 
 const CurrentWeatherProvider = ({ children }) => {
-  const [searchForm, setSearchForm] = useState(initialForm);
+  const [searchForm, setSearchForm] = useState(initialSearchForm);
   const [currentWeather, setCurrentWeather] = useState({});
   const [oneCall, setOneCall] = useState({});
   const [errorMsg, setErrorMsg] = useState(null);
   const [isLoadingCurrentWeather, setIsLoadingCurrentWeather] = useState(true);
   const [isLoadingForecast, setIsLoadingForecast] = useState(true);
+  const [byCityName, setByCityName] = useState("");
+  const [newCoords, setNewCoords] = useState(null);
   useEffect(() => {
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {
@@ -24,19 +26,25 @@ const CurrentWeatherProvider = ({ children }) => {
           setWeather: setCurrentWeather,
           setErrorMsg,
           setIsLoading: setIsLoadingCurrentWeather,
+          name: byCityName,
+          setNewCoords,
         };
         getWeatherOfMyLocation(optionsCurrentWeather);
-        const optionesOneCall = {
-          ...optionsCurrentWeather,
-          path: "onecall",
-          setWeather: setOneCall,
-          exclude: "minutely",
-          setIsLoading: setIsLoadingForecast,
-        };
-        getWeatherOfMyLocation(optionesOneCall);
       });
     }
-  }, []);
+  }, [byCityName]);
+  useEffect(() => {
+    const optionesOneCall = {
+      path: "onecall",
+      lat: newCoords?.lat,
+      long: newCoords?.lon,
+      setWeather: setOneCall,
+      setErrorMsg,
+      exclude: "minutely",
+      setIsLoading: setIsLoadingForecast,
+    };
+    if (newCoords) getWeatherOfMyLocation(optionesOneCall);
+  }, [newCoords]);
   const data = {
     searchForm,
     setSearchForm,
@@ -45,6 +53,7 @@ const CurrentWeatherProvider = ({ children }) => {
     oneCall,
     isLoadingCurrentWeather,
     isLoadingForecast,
+    setByCityName,
   };
 
   return (

@@ -1,10 +1,21 @@
 import { useContext } from "react";
-import { CurrentWeatherContext } from "../context/CurrentWeatherProvider";
+import {
+  CurrentWeatherContext,
+  initialSearchForm,
+} from "../context/CurrentWeatherProvider";
 import "./WeatherFormSearch.css";
 const WeatherFormSearch = () => {
-  const { searchForm, setSearchForm } = useContext(CurrentWeatherContext);
+  const { searchForm, setSearchForm, setByCityName } = useContext(
+    CurrentWeatherContext
+  );
   const handleChange = (e) => {
     setSearchForm({ ...searchForm, [e.target.name]: e.target.value });
+  };
+  const handleSearch = (e) => {
+    e.preventDefault();
+    setByCityName(searchForm.city);
+    setSearchForm(initialSearchForm);
+    // console.log({ ...searchForm });
   };
   return (
     <form className="weather-search">
@@ -15,7 +26,7 @@ const WeatherFormSearch = () => {
         placeholder="Ingresa la ciudad"
         value={searchForm.city}
       />
-      <button>Buscar</button>
+      <button onClick={handleSearch}>Buscar</button>
     </form>
   );
 };
