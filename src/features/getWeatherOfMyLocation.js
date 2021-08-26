@@ -8,6 +8,7 @@ const getWeatherOfMyLocation = async ({
   setIsLoading,
 }) => {
   try {
+    setErrorMsg(null);
     const res = await fetch(
       `https://api.openweathermap.org/data/2.5/${path}?lat=${lat}&lon=${long}${
         exclude ? `&exclude=${exclude}` : ""
