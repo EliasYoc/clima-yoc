@@ -8,6 +8,7 @@ const HourlyForecast = () => {
     isLoadingForecast,
   } = useContext(CurrentWeatherContext);
   const cardsLoading = Array(6).fill("");
+  const hourly24 = hourly?.slice(0, 24);
   return (
     <>
       {isLoadingForecast ? (
@@ -21,7 +22,7 @@ const HourlyForecast = () => {
       ) : (
         <section className="current-info hourly">
           <article className="cards-list">
-            {hourly?.map((el) => (
+            {hourly24?.map((el) => (
               <HourlyForecastCard
                 key={el.dt}
                 dt={el.dt}
