@@ -11,7 +11,7 @@ const DailyForecast = () => {
   return (
     <section className="current-info daily">
       <article className="daily-forecast">
-        <h3>Pronóstico 7 dias</h3>
+        <h3>Pronóstico 8 dias</h3>
         <ul className="dayli-forecast__list">
           {daily.map((forecast) => (
             <DaylistForecastCard key={forecast.dt} dailyForecast={forecast} />
