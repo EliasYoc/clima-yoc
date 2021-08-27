@@ -32,10 +32,10 @@ const CurrentWeatherProvider = ({ children }) => {
           };
           getWeatherOfMyLocation(optionsCurrentWeather);
         },
-        (err) =>
-          alert(
-            "El servicio de ubicación está desactivado, habilitelo para usar la aplicación "
-          )
+        (err) => {
+          // console.log(err);
+          alert(err.message);
+        }
       );
     }
   }, [byCityName]);
