@@ -1,4 +1,5 @@
 .wrap.daily-forecast__card {
+  background-color: rgba(211, 211, 211, 0.637);
   padding: 0 5px;
   flex-direction: row;
   font-size: 12px;
