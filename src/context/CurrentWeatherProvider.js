@@ -17,20 +17,26 @@ const CurrentWeatherProvider = ({ children }) => {
   const [newCoords, setNewCoords] = useState(null);
   useEffect(() => {
     if ("geolocation" in navigator) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        const { latitude, longitude } = position.coords;
-        const optionsCurrentWeather = {
-          path: "weather",
-          lat: latitude,
-          long: longitude,
-          setWeather: setCurrentWeather,
-          setErrorMsg,
-          setIsLoading: setIsLoadingCurrentWeather,
-          name: byCityName,
-          setNewCoords,
-        };
-        getWeatherOfMyLocation(optionsCurrentWeather);
-      });
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          const optionsCurrentWeather = {
+            path: "weather",
+            lat: latitude,
+            long: longitude,
+            setWeather: setCurrentWeather,
+            setErrorMsg,
+            setIsLoading: setIsLoadingCurrentWeather,
+            name: byCityName,
+            setNewCoords,
+          };
+          getWeatherOfMyLocation(optionsCurrentWeather);
+        },
+        (err) =>
+          alert(
+            "El servicio de ubicación está desactivado, habilitelo para usar la aplicación "
+          )
+      );
     }
   }, [byCityName]);
   useEffect(() => {
