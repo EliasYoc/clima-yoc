@@ -9,7 +9,7 @@ const DailyForecast = () => {
   if (!daily) return null;
   console.log(daily);
   return (
-    <section className="current-info daily">
+    <section className="current-info daily style-scroll">
       <article className="daily-forecast">
         <h3>Pronóstico 8 dias</h3>
         <ul className="dayli-forecast__list">

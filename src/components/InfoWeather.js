@@ -16,7 +16,7 @@ const InfoWeather = () => {
   });
   return (
     <div className="container">
-      <div>
+      <>
         <div className="container__weather">
           <WeatherCardMain
             main={main}
@@ -34,7 +34,7 @@ const InfoWeather = () => {
           dateSpanish={dateSpanish}
           isLoading={isLoadingCurrentWeather}
         />
-      </div>
+      </>
     </div>
   );
 };

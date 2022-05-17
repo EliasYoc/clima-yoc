@@ -39,3 +39,12 @@ div.skeleton {
 p.skeleton {
   width: 100%;
 }
+@media only screen and (min-width: 650px) {
+  .weather__temp > img {
+    width: 150px;
+    height: 150px;
+  }
+  .weather__temp > p {
+    font-size: 1.2rem;
+  }
+}
