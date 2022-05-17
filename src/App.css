@@ -1,5 +1,12 @@
-.App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.container-center {
+  width: 100%;
+}
+@media only screen and (min-width: 650px) {
+  .container-center {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+  }
 }

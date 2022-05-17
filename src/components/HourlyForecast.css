@@ -25,31 +25,41 @@
   margin-left: 5px;
 }
 .wave-animation {
-  bottom: 0;
-  position: absolute;
-  animation: wave 21s linear infinite;
-  bottom: -20%;
-  z-index: 0;
+  display: none;
 }
-.wave-animation.one {
-  width: 1000px;
-  animation: wave 26s linear infinite;
-  bottom: -17%;
-}
-.wave-animation.two {
-  width: 600px;
-  filter: blur(1px);
-}
-.wave-animation.tree {
-  width: 1000px;
-  animation: wave 23s linear infinite reverse;
-  filter: blur(3px);
-}
-@keyframes wave {
-  0% {
-    transform: translateX(-100%);
+@media only screen and (min-width: 650px) {
+  .current-info.hourly {
+    grid-row: 1/2;
+    grid-column: 6/12;
   }
-  100% {
-    transform: translateX(90%);
+  .wave-animation {
+    display: block;
+    bottom: 0;
+    position: absolute;
+    animation: wave 21s linear infinite;
+    bottom: -20%;
+    z-index: 0;
+  }
+  .wave-animation.one {
+    width: 1000px;
+    animation: wave 26s linear infinite;
+    bottom: -17%;
+  }
+  .wave-animation.two {
+    width: 600px;
+    filter: blur(1px);
+  }
+  .wave-animation.tree {
+    width: 1000px;
+    animation: wave 23s linear infinite reverse;
+    filter: blur(3px);
+  }
+  @keyframes wave {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(90%);
+    }
   }
 }
