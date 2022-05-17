@@ -2,9 +2,15 @@
   background: url("https://static5.depositphotos.com/1038117/449/i/600/depositphotos_4492489-stock-photo-sea-and-coconut-palm.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   padding: 5px;
   border-radius: 10px;
-  grid-column: span 4;
-  grid-row: span 3;
+}
+@media only screen and (min-width: 650px) {
+  .current-info {
+    grid-column: span 5;
+    grid-row: span 3;
+  }
 }

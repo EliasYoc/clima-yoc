@@ -20,8 +20,8 @@ const HourlyForecast = () => {
           </article>
         </section>
       ) : (
-        <section className="current-info hourly">
-          <article className="cards-list">
+        <section className="current-info hourly ">
+          <article className="cards-list style-scroll">
             {hourly24?.map((el) => (
               <HourlyForecastCard
                 key={el.dt}

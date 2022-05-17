@@ -25,3 +25,8 @@
   display: flex;
   align-items: center;
 }
+@media only screen and (min-width: 650px) {
+  .weather__description {
+    font-size: 1.2rem;
+  }
+}

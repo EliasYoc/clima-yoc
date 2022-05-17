@@ -16,21 +16,27 @@
   position: relative;
   z-index: 10;
 }
-.cards-list::-webkit-scrollbar {
+/* .cards-list::-webkit-scrollbar {
   height: 5px;
 }
 .cards-list::-webkit-scrollbar-thumb {
   background: rgba(128, 128, 128, 0.781);
   border-radius: 30px;
   margin-left: 5px;
-}
+} */
 .wave-animation {
   display: none;
 }
 @media only screen and (min-width: 650px) {
   .current-info.hourly {
     grid-row: 1/2;
-    grid-column: 6/12;
+    grid-column: 7/13;
+    padding: 0;
+  }
+  .cards-list {
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
   }
   .wave-animation {
     display: block;
